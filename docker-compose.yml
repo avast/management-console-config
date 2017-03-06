@@ -1,0 +1,40 @@
+version: '2'
+services:
+  server:
+    image: avastsoftware/management-console-beta:${AFB_VERSION}
+    ports:
+      - "${AFB_WEB_PORT}:8443"
+      - "${AFB_DEVICE_PORT}:8080"
+      - "${AFB_AGENT_PORT}:8090"
+    links:
+      - db
+    environment:
+      HOST: ${AFB_HOSTNAME}
+      DEVICE_PORT: ${AFB_DEVICE_PORT}
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: ${AFB_DB_USER}
+      DB_PASSWORD: ${AFB_DB_PASSWORD}
+      DB_NAME: ${AFB_DB_NAME}
+      # Security
+      KEYSTORE_PASSWORD: ${AFB_KEYSTORE_PASSWORD}
+      KEYSTORE_TYPE: ${AFB_KEYSTORE_TYPE}
+      KEYSTORE_PATH: "/opt/avast/on-premise/security/${AFB_KEYSTORE_PATH}"
+      CLI_PRIVATE_KEY_PATH: "/opt/avast/on-premise/security/clicrt_rsa-key.prv.der"
+      CLI_PUBLIC_KEY_PATH: "/opt/avast/on-premise/security/clicrt_rsa-key.pub.der"
+    volumes:
+      - ${AFB_LOG_DIR}:/opt/avast/on-premise/log
+      - ${AFB_SEC_DIR}:/opt/avast/on-premise/security
+  db:
+    image: avastsoftware/management-console-db:9.3.15.1
+    environment:
+      POSTGRES_USER: ${AFB_DB_USER}
+      POSTGRES_PASSWORD: ${AFB_DB_PASSWORD}
+      POSTGRES_DB: ${AFB_DB_NAME}
+    ports:
+      - "${AFB_DB_PORT}:5432"
+    volumes:
+      - data:/var/lib/postgresql/data
+
+volumes:
+  data: {}
