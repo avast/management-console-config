@@ -10,7 +10,9 @@ services:
       - db
     environment:
       HOST: ${AFB_HOSTNAME}
+      WEB_PORT: ${AFB_WEB_PORT}
       DEVICE_PORT: ${AFB_DEVICE_PORT}
+      AGENT_PORT: ${AFB_AGENT_PORT}
       DB_HOST: db
       DB_PORT: 5432
       DB_USER: ${AFB_DB_USER}
@@ -31,8 +33,6 @@ services:
       POSTGRES_USER: ${AFB_DB_USER}
       POSTGRES_PASSWORD: ${AFB_DB_PASSWORD}
       POSTGRES_DB: ${AFB_DB_NAME}
-    ports:
-      - "${AFB_DB_PORT}:5432"
     volumes:
       - data:/var/lib/postgresql/data
 
