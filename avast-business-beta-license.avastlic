@@ -1,0 +1,96 @@
+[Certificates]
+
+#
+# Customer name (license holder)
+#
+CustomerName=Avast Business Beta
+
+#
+# Customer number
+#
+CustomerNumber=2124201987
+
+#
+# Number of licensed products (covered by this file)
+#
+CertificateCount=1
+
+#
+# Section for licensed product 1
+#
+[Certificate0]
+
+#
+# Name of product: Avast business security
+#
+Feature=AV_BUSINESS
+
+#
+# License creation date: Feb 21 2017, 12:33 PM GMT
+#
+Issued=1487680406
+
+#
+# Update license expiry date: May 15 2017, 00:00 AM GMT
+#
+UpdateValidThru=1494806400
+
+#
+# Number of licensed items
+#
+LicenseCount=100
+
+#
+# License Identifier
+#
+LicenseId=10c0e3ea-6942-4ed4-b458-fc33160738a5
+
+#
+# License type
+#   0 = Standard (Premium)
+#   4 = Premium trial
+#   13 = Free, unapproved
+#   14 = Free, approved
+#   16 = Temporary
+LicenseType=4
+
+#
+# License Family
+#
+LicenseFamily=AvBusiness
+
+[Certificate0.Feature0]
+Feature=alc_shl_fil
+
+[Certificate0.Feature1]
+Feature=alc_shl_mai
+
+[Certificate0.Feature2]
+Feature=alc_shl_web
+
+[Certificate0.Feature3]
+Feature=alc_cmp_rescuedisk
+
+[Certificate0.Feature4]
+Feature=alc_shl_spm
+
+[Certificate0.Feature5]
+Feature=alc_cmp_bpc
+
+[Certificate0.Feature6]
+Feature=alc_cmp_fw
+
+[Certificate0.Feature7]
+Feature=alc_cmp_sfzone
+
+[Certificate0.Feature8]
+Feature=alc_cmp_shredder
+
+[Certificate0.Feature9]
+Feature=alc_cmp_snx
+
+[Certificate0.Feature10]
+Feature=alc_shl_idp
+
+[Signature]
+Signature=ASWSig2A6A528D2E3863F482735B6106CE0F937CDD2F812CDA805C5C1631F841790E9A5EB0A743AA897A08DE3FEB618EE8EBA17BD7D418BB80C99D701C18D5CFA54D7EEDASWSig2A
