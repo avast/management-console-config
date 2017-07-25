@@ -3,7 +3,7 @@ services:
   server:
     image: avastsoftware/management-console:${AFB_VERSION}
     ports:
-      - "${AFB_WEB_PORT}:8443"
+      - "${AFB_WEB_PORT}:443"
       - "${AFB_DEVICE_PORT}:8080"
       - "${AFB_AGENT_PORT}:8090"
     links:
