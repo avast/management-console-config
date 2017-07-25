@@ -1,7 +1,7 @@
 version: '2'
 services:
   server:
-    image: avastsoftware/management-console-beta:${AFB_VERSION}
+    image: avastsoftware/management-console:${AFB_VERSION}
     ports:
       - "${AFB_WEB_PORT}:8443"
       - "${AFB_DEVICE_PORT}:8080"
@@ -28,7 +28,7 @@ services:
       - ${AFB_LOG_DIR}:/opt/avast/on-premise/log
       - ${AFB_SEC_DIR}:/opt/avast/on-premise/security
   db:
-    image: avastsoftware/management-console-db:9.3.15.1
+    image: avastsoftware/management-console-db:9.6.3.1
     environment:
       POSTGRES_USER: ${AFB_DB_USER}
       POSTGRES_PASSWORD: ${AFB_DB_PASSWORD}
